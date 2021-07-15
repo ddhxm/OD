@@ -1,6 +1,6 @@
 目标检测模块主要分为三个主模块，其数据输入来自摄像头和激光雷达，且包含两者传感器之间的标定。图中红色部分为目标检测在Ros中的节点和订阅发布的话题名称。
 主要节点为Darknet_ros，用于摄像头的目标检测，从/camera/image_raw读入图像并通过话题/darknet_ros/bounding_boxes发布二维目标信息；
-PCDet_inference用于激光雷达的目标检测，从话题/hesai/poandar读入激光雷达数据，通过/PCDet_inference/objects3d发布检测到的3D目标信息；
+PCDet_ros用于激光雷达的目标检测，从话题/hesai/poandar读入激光雷达数据，通过/PCDet_inference/objects3d发布检测到的3D目标信息；
 另外，中间cam_lidar模块主要用于将darknet_ros检测得到的2D目标通过投影的方式得到其在点云中的深度信息，并通过/cam_lidar_depth/2d_box_depth发布消息。
 
 ![image](kuagntu.png)
